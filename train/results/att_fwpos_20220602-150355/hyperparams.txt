@@ -1,0 +1,9 @@
+dataset:	/home/working/PredictionModel/train/../data/hatci_clinic/1st_TD_matched/dataset_1/
+learning_rate:	0.0005
+batch_size:	8000
+epochs:	2000
+multi_gpu:	True
+past_windowsize:	20
+past_stepsize:	1
+pred_windowsize:	10
+pred_stepsize:	10

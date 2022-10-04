@@ -1,0 +1,97 @@
+Hyperparameters
+dataset:	/home/working/PredictionModel/train/../data/hatci_clinic/1st_TD_matched/dataset_1/
+learning_rate:	0.0005
+batch_size:	2000
+global_batch_size:	8000
+epochs:	2000
+multi_gpu:	True
+past_windowsize:	20
+past_stepsize:	1
+pred_windowsize:	10
+pred_stepsize:	10
+
+mse:
+[[ 0.747 ]
+ [ 2.8802]
+ [ 6.8127]
+ [11.8097]
+ [17.3253]
+ [23.3471]
+ [29.7334]
+ [36.202 ]
+ [42.2451]
+ [49.0731]]
+mean:	22.01755714416504
+mae:
+[[0.617 ]
+ [1.1453]
+ [1.7475]
+ [2.3215]
+ [2.8145]
+ [3.2699]
+ [3.6815]
+ [4.0621]
+ [4.3715]
+ [4.7032]]
+mean:	2.8734023571014404
+r2:
+[[0.999 ]
+ [0.9961]
+ [0.9907]
+ [0.984 ]
+ [0.9765]
+ [0.9683]
+ [0.9596]
+ [0.9508]
+ [0.9426]
+ [0.9333]]
+mean:	0.9700860977172852
+
+Model Summary
+Model: "conv_att"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ enc_past (Encoder_convs)    multiple                  6816      
+|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|
+| conv1d (Conv1D)           multiple                  608       |
+|                                                               |
+| conv1d_1 (Conv1D)         multiple                  3104      |
+|                                                               |
+| conv1d_2 (Conv1D)         multiple                  3104      |
+|                                                               |
+| re_lu (ReLU)              multiple                  0         |
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+ spatial_att (myAttention)   multiple                  1200      
+                                                                 
+ enc_forward (Encoder_convs)  multiple                 6624      
+|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|
+| conv1d_3 (Conv1D)         multiple                  416       |
+|                                                               |
+| conv1d_4 (Conv1D)         multiple                  3104      |
+|                                                               |
+| conv1d_5 (Conv1D)         multiple                  3104      |
+|                                                               |
+| re_lu_2 (ReLU)            multiple                  0         |
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+ dense_5 (Dense)             multiple                  14368     
+                                                                 
+ dense_6 (Dense)             multiple                  1184      
+                                                                 
+ dense_7 (Dense)             multiple                  96288     
+                                                                 
+ dense_8 (Dense)             multiple                  2080      
+                                                                 
+ dense_9 (Dense)             multiple                  33        
+                                                                 
+ re_lu_3 (ReLU)              multiple                  0         
+                                                                 
+ activation_1 (Activation)   multiple                  0         
+                                                                 
+ flatten (Flatten)           multiple                  0         
+                                                                 
+=================================================================
+Total params: 128,593
+Trainable params: 128,593
+Non-trainable params: 0
+_________________________________________________________________
